@@ -271,3 +271,5 @@ func fragmentFirstLine(chunk *sources.Chunk) (int64, *int64) {
 	}
 	return *fragmentStart, fragmentStart
 }
+
+#test
