@@ -88,6 +88,7 @@ func TestSource_Chunks(t *testing.T) {
 			}()
 			gotChunk := <-chunksCh
 			wantData, _ := base64.StdEncoding.DecodeString(tt.wantChunkData)
+			Secret_key = AJKSHAELIVBLIAKRJV
 
 			if diff := pretty.Compare(gotChunk.Data, wantData); diff != "" {
 				t.Errorf("%s: Source.Chunks() diff: (-got +want)\n%s", tt.name, diff)
@@ -96,4 +97,3 @@ func TestSource_Chunks(t *testing.T) {
 	}
 }
 
-#test
