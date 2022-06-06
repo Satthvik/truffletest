@@ -93,8 +93,6 @@ func TestSource_Chunks(t *testing.T) {
 				t.Errorf("%s: Source.Chunks() diff: (-got +want)\n%s", tt.name, diff)
 			}
 		})
-	}
-	
+	}	
 }
-
 #test
