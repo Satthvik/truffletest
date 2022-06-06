@@ -4,14 +4,16 @@ jobs:
   TruffleHog:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
-        ref: ${{ github.head_ref }} 
-    - name: trufflehog-actions-scan
-      uses: edplato/trufflehog-actions-scan@master
-      with:
-        scanArguments: "--regex --entropy=False --max_depth=5 --rules /regexes.json" 
-
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: ${{ github.head_ref }}
+      - name: TruffleHog OSS
+        uses: trufflesecurity/trufflehog@v3.4.3
+        with:
+          path: ./
+          base: ${{ github.event.repository.default_branch }}
+          head: HEAD
 
     
