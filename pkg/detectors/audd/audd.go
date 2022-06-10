@@ -49,7 +49,7 @@ func (s Scanner) FromData(ctx context.Context, verify bool, data []byte) (result
 		}
 
 		if verify {
-			req, err := http.NewRequestWithContext(ctx, "GET", fmt.Sprintf("https://api.audd.io/setCallbackUrl/?api_token=%s&url=https://yourwebsite.com/callbacks_handler/", resMatch), nil)
+			req, err := http.NewRequestWithContext(ctx, "GET", fmt.Sprintf("https://api.audd.io/getStreamWidgetUrl/?api_token=%s&radio_id=1", resMatch), nil)
 			if err != nil {
 				continue
 			}
